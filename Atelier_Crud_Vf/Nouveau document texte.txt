@@ -1,0 +1,78 @@
+bool Departement::modifier_departement(int crash)
+{
+    QSqlQuery query;
+
+   QString res = QString::number(crash);
+   QString why = QString::number(places_disponibles);
+//query.prepare("UPDATE departements "" SET id_departement = :id_departement, NOM_DEPARTEMENT = :nom_departement, PLACES_DISPONIBLES = :places_disponibles,  ""WHERE ID_departement = :crash");
+query.prepare("UPDATE departements set NOM_DEPARTEMENT= :nom_departement, PLACES_DISPONIBLES= :places_disponibles where id_departement= :crash");
+    query.bindValue(":crash", res);
+    query.bindValue(":nom_departement", nom_departement);
+    query.bindValue(":places_disponibles", places_disponibles);
+//query.bindValue(":places_disponibles", why);
+    return query.exec();
+}
+
+
+-----------------------------------------------------------------------------------------------------------
+
+bool MainWindow::on_pb_chercherD_released()
+{
+
+    QSqlQuery query;
+    int crash = ui->idEdit_2->text().toInt();
+
+    QString res = QString::number(crash);
+    query.prepare("SELECT * FROM departements WHERE id_departement = :crash");
+    query.bindValue(":crash", res);
+    query.exec();
+    if(query.first())
+    {
+        QMessageBox::information(this, tr("Modifier Departement"), tr("Le département est trouvé avec success, Veuillez entrer les nouvelles informations."));
+         ui->idEdit_2->setText(query.value(0).toString());
+        ui->nomEdit_2->setText(query.value(1).toString());
+        ui->placesEdit_2->setText(query.value(2).toString());
+
+        return true;
+    }
+}
+void MainWindow::on_pb_confirmerD_released()
+{
+    QString nom_departement;
+    int id_departement=0,places_disponibles=0;
+    QSqlQuery query;
+
+
+    int crash = ui->idEdit_2->text().toInt();
+    //int aux1 = ui->placesEdit_2->text().toInt();
+    QString res = QString::number(crash);
+    //QString aux = QString::number(aux1);
+    //id_departement = ui->idEdit_2->text().toInt();
+    nom_departement = ui->nomEdit_2->text();
+    places_disponibles=ui->placesEdit_2->text().toInt();
+
+
+    Departement d(id_departement,nom_departement,places_disponibles);
+
+    if(d.modifier_departement(crash))
+    {
+         ui->tabdepartement->setModel(tmpdepartement.afficher());
+         QMessageBox::information(nullptr, QObject::tr("Modifier un département"),
+                           QObject::tr("Departement modifié.\n"
+                                       "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+}
+
+---------------------------------------------------------------------------------------------
+//modifier
+ QSqlQuery query;
+
+   QString res = QString::number(crash);
+   QString why = QString::number(places_disponibles);
+//query.prepare("UPDATE departements "" SET id_departement = :id_departement, NOM_DEPARTEMENT = :nom_departement, PLACES_DISPONIBLES = :places_disponibles,  ""WHERE ID_departement = :crash");
+query.prepare("UPDATE departements set NOM_DEPARTEMENT= :nom_departement, PLACES_DISPONIBLES= :places_disponibles where id_departement= :crash");
+    query.bindValue(":crash", res);
+    query.bindValue(":nom_departement", nom_departement);
+    query.bindValue(":places_disponibles", places_disponibles);
+//query.bindValue(":places_disponibles", why);
+    return query.exec();
