@@ -11,14 +11,145 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gestion des étudiants</string>
+   <string>Gestion Employé/Département</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QStatusBar {
+    background-color: rgb(178, 102, 255);
+}
+QPushButton
+{
+  border: 0px white;
+  border-radius: 10px;
+  padding: 0 8px;
+  background: rgb(178, 102, 255);
+}
+QComboBox {
+    border: 1px solid rgb(178, 102, 255);
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+QTableView {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #E4BBC2, stop: 1 white);
+}
+QLineEdit { background-color: white;
+border: 2px solid rgb(178, 102, 255);
+    border-radius: 4px; }
+
+QFrame {
+    border: 2px solid #E4BBC2;
+    border-radius: 4px;
+    padding: 2px;
+    background-image: url(images/welcome.png);
+}
+ QLabel{
+    border:0px;
+    border-radius: 4px;
+    padding: 0px;
+    background-image: url(images/welcome.png);
+}
+
+
+QStatusBar {
+    background-color: rgb(178, 102, 255);
+}
+
+QStatusBar::item {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+
+
+/************************************************/
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid#E4BBC2;
+background-color:black;
+}
+
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar not QTabWidget */
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #ced1ff;
+}
+
+QTabWidget::tab-bar {
+    left: 10px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar not QTabWidget */
+QTabBar::tab {
+    background:rgb(194, 194, 255);
+    border: 1px solid rgb(194, 194, 255);
+    border-bottom-color: #E4BBC2; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}
+
+
+
+/*********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {   background: qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 #E4BBC2, stop: 1  rgb(255,255, 255));   color: rgb(0,0, 0);   border: 1px solid #E4BBC2; }
+/** {   background-color: rgb(255, 215, 255);   color: rgb(0,0, 0);   border: 1px solid #ffaaff; }*/</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>10</y>
       <width>531</width>
       <height>331</height>
      </rect>
@@ -29,7 +160,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -53,8 +184,8 @@
        <rect>
         <x>50</x>
         <y>90</y>
-        <width>47</width>
-        <height>13</height>
+        <width>31</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="text">
@@ -150,9 +281,41 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>581</width>
+        <width>371</width>
         <height>261</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_rese_pdf">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>40</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pdf">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>70</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PDF</string>
       </property>
      </widget>
     </widget>
@@ -228,7 +391,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Fonction</string>
+       <string>Nom</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_12">
@@ -236,12 +399,12 @@
        <rect>
         <x>100</x>
         <y>120</y>
-        <width>47</width>
-        <height>13</height>
+        <width>31</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Capacité</string>
+       <string>Date</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="idEdit">
@@ -273,14 +436,14 @@
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>56</x>
         <y>170</y>
-        <width>47</width>
-        <height>13</height>
+        <width>101</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Capacité</string>
+       <string>Id_Département</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="depEdit">
@@ -341,6 +504,124 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_14">
+     <attribute name="title">
+      <string>Mailing</string>
+     </attribute>
+     <widget class="QLabel" name="label_71">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>70</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Objet</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_sujetmail_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>120</y>
+        <width>191</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_72">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>40</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Destinataire</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_73">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>240</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Envoyer un mail vers un employé</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2_text_mail_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>70</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_distinataire_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>30</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_74">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>140</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sujet</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mail_2">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>130</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Envoyer</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QTabWidget" name="tabWidget_2">
     <property name="geometry">
@@ -357,7 +638,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -381,8 +662,8 @@
        <rect>
         <x>60</x>
         <y>90</y>
-        <width>47</width>
-        <height>13</height>
+        <width>31</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="text">
@@ -617,6 +898,34 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_9">
+     <attribute name="title">
+      <string>Statistiques</string>
+     </attribute>
+     <widget class="QCustomPlot" name="gplot" native="true">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>471</width>
+        <height>241</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="afficher_stat2">
+      <property name="geometry">
+       <rect>
+        <x>514</x>
+        <y>160</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher Stats</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -625,7 +934,7 @@
      <x>0</x>
      <y>0</y>
      <width>1305</width>
-     <height>26</height>
+     <height>28</height>
     </rect>
    </property>
   </widget>
@@ -640,6 +949,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

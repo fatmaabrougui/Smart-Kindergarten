@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql
-QT += core gui printsupport
+QT += core gui printsupport network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -30,13 +30,19 @@ SOURCES += \
     employe.cpp \
         main.cpp \
         mainwindow.cpp \
-    connexion.cpp
+    connexion.cpp \
+    qcustomplot.cpp \
+    smtp.cpp \
+    statestique.cpp
 
 HEADERS += \
     departement.h \
     employe.h \
         mainwindow.h \
-    connexion.h
+    connexion.h \
+    qcustomplot.h \
+    smtp.h \
+    statestique.h
 
 FORMS += \
         mainwindow.ui

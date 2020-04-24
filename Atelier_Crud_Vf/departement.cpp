@@ -56,7 +56,7 @@ bool Departement::modifier_departement(int cod)
 query.prepare("UPDATE departements SET nom_departement= :nom_departement, places_disponibles= :places_disponibles WHERE id_departement= :cod");
     query.bindValue(":cod", res);
     query.bindValue(":nom_departement", ress);
-    //query.bindValue(":places_disponibles", places_disponibles);
+
     query.bindValue(":places_disponibles", places_disponibles);
 
     return query.exec();

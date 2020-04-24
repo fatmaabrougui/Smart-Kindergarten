@@ -28,6 +28,8 @@ private slots:
 
     void on_pb_confirmerE_released();
 
+
+
     //Departement
 
     void on_pb_ajouter_2_clicked();
@@ -37,6 +39,16 @@ private slots:
     bool on_pb_chercherD_released();
 
     void on_pb_confirmerD_released();
+
+    //metiers
+
+    void on_pdf_clicked();
+
+    void on_mail_2_released();
+
+    //void on_afficher_stat_clicked();
+
+    void on_afficher_stat2_clicked();
 
 private:
     Ui::MainWindow *ui;
