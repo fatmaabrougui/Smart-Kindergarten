@@ -2,7 +2,7 @@ QT       += core sql gui printsupport network charts
 
 QT += widgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network printsupport
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network printsupport multimedia
 
 CONFIG += c++11
 
@@ -20,13 +20,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     acceuille.cpp \
     aliment_menu.cpp \
+    aliments.cpp \
+    club.cpp \
     connexion.cpp \
-    departement_employe.cpp \
+    departement.cpp \
     eleve_niveau.cpp \
+    employe.cpp \
+    espace.cpp \
     espace_jouet.cpp \
+    evenement_club.cpp \
     evennement_club.cpp \
+    event.cpp \
+    gestioncuisine.cpp \
+    gestiond_emp.cpp \
+    gestionjouets.cpp \
+    gestionsalle.cpp \
+    jouets.cpp \
     main.cpp \
     mainwindow.cpp \
+    materiel.cpp \
+    menu.cpp \
+    player.cpp \
+    playlist.cpp \
+    qcustomplot.cpp \
+    salle.cpp \
     salle_materiel.cpp \
     donutbreakdownchart.cpp \
     mainslice.cpp \
@@ -35,12 +52,29 @@ SOURCES += \
 HEADERS += \
     acceuille.h \
     aliment_menu.h \
+    aliments.h \
+    club.h \
     connexion.h \
-    departement_employe.h \
+    departement.h \
     eleve_niveau.h \
+    employe.h \
+    espace.h \
     espace_jouet.h \
+    evenement_club.h \
     evennement_club.h \
+    event.h \
+    gestioncuisine.h \
+    gestiond_emp.h \
+    gestionjouets.h \
+    gestionsalle.h \
+    jouets.h \
     mainwindow.h \
+    materiel.h \
+    menu.h \
+    player.h \
+    playlist.h \
+    qcustomplot.h \
+    salle.h \
     salle_materiel.h \
     donutbreakdownchart.h \
     mainslice.h \
@@ -52,7 +86,12 @@ FORMS += \
     departement_employe.ui \
     eleve_niveau.ui \
     espace_jouet.ui \
+    evenement_club.ui \
     evennement_club.ui \
+    gestioncuisine.ui \
+    gestiond_emp.ui \
+    gestionjouets.ui \
+    gestionsalle.ui \
     mainwindow.ui \
     salle_materiel.ui
 
@@ -68,3 +107,15 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 target.path = $$[QT_INSTALL_EXAMPLES]/charts/donutbreakdown
 
 INSTALLS += target
+
+DISTFILES += \
+    .gitignore \
+    jouets.pro.user \
+    jouets.pro.user.e0e3f1b \
+    libcrypto-1_1-x64.dll \
+    libcrypto-1_1.dll \
+    libeay32.dll \
+    libssl-1_1-x64.dll \
+    libssl-1_1.dll \
+    ssleay32.dll \
+    telecome.pro.user

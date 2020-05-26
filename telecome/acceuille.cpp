@@ -6,7 +6,12 @@
 #include "espace_jouet.h"
 #include "eleve_niveau.h"
 #include "salle_materiel.h"
-
+#include "gestionsalle.h"
+#include "gestionjouets.h"
+#include "gestiond_emp.h"
+#include "gestioncuisine.h"
+#include "evenement_club.h"
+#include "evennement_club.h"
 Acceuille::Acceuille(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Acceuille)
@@ -21,30 +26,31 @@ Acceuille::~Acceuille()
 
 void Acceuille::on_pushButton_clicked()
 {
-    departement_employe departement_employe;
-    departement_employe.setModal(true);
-    departement_employe.exec();
+    GestionD_emp GestionD_emp ;
+    GestionD_emp.setModal(true);
+GestionD_emp.exec();
 }
 
 void Acceuille::on_pushButton_2_clicked()
 {
-    aliment_menu aliment_menu;
-    aliment_menu.setModal(true);
-    aliment_menu.exec();
+    gestioncuisine gestioncuisine;
+    gestioncuisine.setModal(true);
+    gestioncuisine.exec();
 }
 
 void Acceuille::on_pushButton_3_clicked()
 {
-    evennement_club evennement_club;
-    evennement_club.setModal(true);
-    evennement_club.exec();
+    evenement_club evenement_club;
+    evenement_club.setModal(true);
+    evenement_club.exec();
 }
 
 void Acceuille::on_pushButton_4_clicked()
 {
-    espace_jouet espace_jouet;
-    espace_jouet.setModal(true);
-    espace_jouet.exec();
+    //hide();
+   gestionjouets gestionjouets;
+    gestionjouets.setModal(true);
+    gestionjouets.exec();
 }
 
 void Acceuille::on_pushButton_5_clicked()
@@ -57,8 +63,16 @@ void Acceuille::on_pushButton_5_clicked()
 
 void Acceuille::on_pushButton_6_clicked()
 {
+    hide();
+    gestionSalle gestionSalle;
+    gestionSalle.setModal(true);
+    gestionSalle.exec();
+    //gestionSalle.show();
+
+    /*
     salle_materiel salle_materiel;
     salle_materiel.setModal(true);
-    salle_materiel.exec();
+    salle_materiel.exec();*/
 
 }
+

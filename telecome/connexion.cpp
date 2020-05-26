@@ -7,9 +7,9 @@ bool Connexion::ouvrirConnexion()
 {
 bool test= false;
     db=QSqlDatabase::addDatabase("QODBC"); //DB DRIVER UNIVERSEL
-db.setDatabaseName("testcrud");
-db.setUserName("yessine");//inserer nom de l'utilisateur
-db.setPassword("esprit20");//inserer mot de passe de cet utilisateur
+db.setDatabaseName("green");
+db.setUserName("aa");//inserer nom de l'utilisateur
+db.setPassword("aa2020");//inserer mot de passe de cet utilisateur
 
 if (db.open()) test = true;
 return test;

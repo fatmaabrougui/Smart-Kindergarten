@@ -6,12 +6,145 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
+    <width>623</width>
     <height>444</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QStatusBar {
+    background-color: rgb(207, 203, 255);
+}
+QPushButton
+{
+  border: 0px white;
+  border-radius: 10px;
+  padding: 0 8px;
+  background: rgb(170, 170, 255);
+}
+QComboBox {
+    border: 1px solid rgb(170, 170, 255);
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+QTableView {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0,
+                                stop: 0 #FF92BB, stop: 1 white);
+border:0.5px;
+}
+QLineEdit { background-color: white;
+border: 2px solid rgb(170, 170, 255);
+    border-radius: 4px; }
+
+QFrame {
+    border: 2px solid rgb(170, 170, 255);
+    border-radius: 4px;
+    padding: 2px;
+    background-image: url(images/welcome.png);
+}
+ QLabel{
+    border:0px;
+    border-radius: 4px;
+    padding: 0px;
+    background-image: url(images/welcome.png);
+}
+
+
+QStatusBar {
+    background-color: rgb(207, 203, 255);
+}
+
+QStatusBar::item {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+
+
+/************************************************/
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #ced1ff;
+background-color:black;
+}
+
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #ced1ff;
+}
+
+QTabWidget::tab-bar {
+    left: 10px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background:rgb(194, 194, 255);
+    border: 1px solid #ced1ff;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}
+
+
+
+/*********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {   background: qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 #ffaaff, stop: 1  rgb(255,255, 255));   color: rgb(0,0, 0);   border: 1px solid #ffaaff; }
+/** {   background-color: rgb(255, 215, 255);   color: rgb(0,0, 0);   border: 1px solid #ffaaff; }*/
+</string>
   </property>
   <widget class="QToolBox" name="toolBox">
    <property name="geometry">
@@ -30,8 +163,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>591</width>
-      <height>337</height>
+      <width>575</width>
+      <height>321</height>
      </rect>
     </property>
     <attribute name="label">
@@ -42,12 +175,145 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>551</width>
-       <height>301</height>
+       <width>561</width>
+       <height>321</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QStatusBar {
+    background-color: rgb(207, 203, 255);
+}
+QPushButton
+{
+  border: 0px white;
+  border-radius: 10px;
+  padding: 0 8px;
+  background: rgb(170, 170, 255);
+}
+QComboBox {
+    border: 1px solid rgb(170, 170, 255);
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+QTableView {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0,
+                                stop: 0 #FF92BB, stop: 1 white);
+border:0.5px;
+}
+QLineEdit { background-color: white;
+border: 2px solid rgb(170, 170, 255);
+    border-radius: 4px; }
+
+QFrame {
+    border: 2px solid rgb(170, 170, 255);
+    border-radius: 4px;
+    padding: 2px;
+    background-image: url(images/welcome.png);
+}
+ QLabel{
+    border:0px;
+    border-radius: 4px;
+    padding: 0px;
+    background-image: url(images/welcome.png);
+}
+
+
+QStatusBar {
+    background-color: rgb(207, 203, 255);
+}
+
+QStatusBar::item {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+
+
+/************************************************/
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #ced1ff;
+background-color:black;
+}
+
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #ced1ff;
+}
+
+QTabWidget::tab-bar {
+    left: 10px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background:rgb(194, 194, 255);
+    border: 1px solid #ced1ff;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}
+
+
+
+/*********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {   background: qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 #ffaaff, stop: 1  rgb(255,255, 255));   color: rgb(0,0, 0);   border: 1px solid #ffaaff; }
+/** {   background-color: rgb(255, 215, 255);   color: rgb(0,0, 0);   border: 1px solid #ffaaff; }*/
+</string>
+     </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -186,7 +452,7 @@
         <rect>
          <x>270</x>
          <y>70</y>
-         <width>91</width>
+         <width>101</width>
          <height>22</height>
         </rect>
        </property>
@@ -209,8 +475,8 @@
       <widget class="QPushButton" name="pB_trie_eleve">
        <property name="geometry">
         <rect>
-         <x>470</x>
-         <y>220</y>
+         <x>460</x>
+         <y>200</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -438,7 +704,7 @@
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>10</y>
+         <y>40</y>
          <width>61</width>
          <height>16</height>
         </rect>
@@ -450,9 +716,9 @@
       <widget class="QLineEdit" name="idl">
        <property name="geometry">
         <rect>
-         <x>240</x>
+         <x>330</x>
          <y>30</y>
-         <width>91</width>
+         <width>141</width>
          <height>31</height>
         </rect>
        </property>
@@ -463,8 +729,8 @@
       <widget class="QPushButton" name="pb_chercher_14">
        <property name="geometry">
         <rect>
-         <x>250</x>
-         <y>80</y>
+         <x>360</x>
+         <y>90</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -476,9 +742,9 @@
       <widget class="QLineEdit" name="prenoml">
        <property name="geometry">
         <rect>
-         <x>80</x>
+         <x>90</x>
          <y>120</y>
-         <width>101</width>
+         <width>111</width>
          <height>20</height>
         </rect>
        </property>
@@ -489,7 +755,7 @@
       <widget class="QLineEdit" name="noml">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>90</x>
          <y>70</y>
          <width>113</width>
          <height>20</height>
@@ -504,7 +770,7 @@
         <rect>
          <x>20</x>
          <y>70</y>
-         <width>61</width>
+         <width>41</width>
          <height>16</height>
         </rect>
        </property>
@@ -517,7 +783,7 @@
         <rect>
          <x>20</x>
          <y>120</y>
-         <width>61</width>
+         <width>41</width>
          <height>16</height>
         </rect>
        </property>
@@ -528,7 +794,7 @@
       <widget class="QPushButton" name="pb_confirmer_12">
        <property name="geometry">
         <rect>
-         <x>250</x>
+         <x>360</x>
          <y>130</y>
          <width>75</width>
          <height>23</height>
@@ -541,10 +807,10 @@
       <widget class="QLabel" name="label_28">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>20</x>
          <y>170</y>
-         <width>47</width>
-         <height>13</height>
+         <width>31</width>
+         <height>16</height>
         </rect>
        </property>
        <property name="text">
@@ -554,7 +820,7 @@
       <widget class="QLineEdit" name="agel">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>90</x>
          <y>170</y>
          <width>113</width>
          <height>20</height>
@@ -669,8 +935,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>591</width>
-      <height>337</height>
+      <width>575</width>
+      <height>321</height>
      </rect>
     </property>
     <attribute name="label">
@@ -686,7 +952,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="ajouter_niveau_tab">
       <attribute name="title">
@@ -821,21 +1087,6 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="afficher_niveau_tab">
-      <attribute name="title">
-       <string>Afficher</string>
-      </attribute>
-      <widget class="QTableView" name="tableniveau">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>431</width>
-         <height>241</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
      <widget class="QWidget" name="supprimer_niveau_tab">
       <attribute name="title">
        <string>Supprimer</string>
@@ -843,7 +1094,7 @@
       <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>10</x>
          <y>30</y>
          <width>47</width>
          <height>13</height>
@@ -874,6 +1125,21 @@
        </property>
        <property name="text">
         <string>Supprimer</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="afficher_niveau_tab">
+      <attribute name="title">
+       <string>Afficher</string>
+      </attribute>
+      <widget class="QTableView" name="tableniveau">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>431</width>
+         <height>241</height>
+        </rect>
        </property>
       </widget>
      </widget>
